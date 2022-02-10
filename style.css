@@ -169,3 +169,42 @@ body {
 .active{
     display: none;
 }
+
+.daily-forecast{
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-top: 1px solid;
+}
+
+.daily{
+  margin: 1.5rem 3rem;
+}
+
+.daily-day{
+  color: #326ad1;
+}
+
+.button-daily{
+  margin: 0 3rem;
+  padding: 0.5rem;
+  background-color: #b0c4ff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.button-daily:hover{
+  /* padding: 0.8rem; */
+  font-size: 1.5rem;
+}
+
+.daily-container{
+  color: white;
+  margin-top: 10rem;
+  text-align: center;
+  font-size: 2rem;
+}
