@@ -15,37 +15,37 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+.big-card{
+  display: flex;
+  flex-direction: row;
+  background-color: #000000;
+  border-radius: 0.5rem;
+  position: absolute;
+  width: 90rem;
+  height: 40rem;
+  top: 2rem;
+  margin: 0 2rem;
+  overflow: hidden;
+}
+
 .text-container{
-  width: 50rem;
   text-align: center;
-    padding: 0 2rem;
 }
 
 .text h1{
-    /* top: 10px; */
-    color: white;
+  justify-content: center;
+  color: white;
 }
-
-.big-card{
-    display: flex;
-    flex-direction: row;
-    background-color: #000000;
-    margin: 2rem 0;
-    border-radius: 3rem;
-}
-
 .card {
-
-  padding: 4rem 3rem;
+  padding: 2rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 3rem;
-  border: 1px solid;
-  border-color: #000000;
-  /* box-shadow: 10px 10px 10px #999; */
+}
+
+.section-card{
   background: linear-gradient(45deg, #d9e3ff 0%, #cfcfcf 75%);
 }
 
@@ -88,19 +88,19 @@ body {
 }
 
 .submit-box {
-  margin-top: -2.5rem;
   flex-direction: column;
-  width: 100%;
+  background: linear-gradient(45deg, #d9e3ff 0%, #cfcfcf 75%);
+  width: 40%;
 }
 
 .search-bar {
-  width: 80%;
+  width: 75%;
   padding-left: 1rem;
-  margin: 0;
+  margin: 1.5rem;
   border-radius: 1rem;
   border: 1px solid;
   font-size: 1.5rem;
-  background-color: #f5e3e6;
+  background-color: #ffffff;
 }
 
 .search-bar:focus {
@@ -116,19 +116,21 @@ body {
 .svg-icon path,
 .svg-icon polygon,
 .svg-icon rect {
-  fill: #000000;
+  fill: rgb(0, 0, 0);
 }
 
 .button {
   border: none;
   font-size: 1.3rem;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .city{
     display: flex;
     align-items: center;
     font-size: 4rem;
+    margin-top: 0;
     margin-bottom: 0;
 }
 
@@ -160,6 +162,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .active{
