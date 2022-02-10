@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+body {
+  background-color: #d9e4f5;
+  background: linear-gradient(90deg, #326ad1 0%, #b0c4ff 75%) fixed;
+  background-size: cover;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.text-container{
+  width: 50rem;
+  text-align: center;
+    padding: 0 2rem;
+}
+
+.text h1{
+    /* top: 10px; */
+    color: white;
+}
+
+.big-card{
+    display: flex;
+    flex-direction: row;
+    background-color: #000000;
+    margin: 2rem 0;
+    border-radius: 3rem;
+}
+
+.card {
+
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 3rem;
+  border: 1px solid;
+  border-color: #000000;
+  /* box-shadow: 10px 10px 10px #999; */
+  background: linear-gradient(45deg, #d9e3ff 0%, #cfcfcf 75%);
+}
+
+.other-info {
+  display: flex;
+}
+
+.small-info {
+  margin: 1rem;
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  border: 1px solid;
+}
+
+.other-info {
+  margin-top: 2.5rem;
+  display: flex;
+  size: 6rem;
+}
+
+.small-partange {
+  font-size: 1.5rem;
+}
+
+.small-text {
+  font-size: 1.2rem;
+}
+
+.humidity {
+  padding: 0.2rem 1.5rem;
+}
+
+.wind {
+  padding: 0.2rem 1rem;
+}
+
+.cloudiness {
+  padding: 0.2rem 1rem;
+}
+
+.submit-box {
+  margin-top: -2.5rem;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-bar {
+  width: 80%;
+  padding-left: 1rem;
+  margin: 0;
+  border-radius: 1rem;
+  border: 1px solid;
+  font-size: 1.5rem;
+  background-color: #f5e3e6;
+}
+
+.search-bar:focus {
+    outline: none;
+}
+
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  padding-top: 1px;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #000000;
+}
+
+.button {
+  border: none;
+  font-size: 1.3rem;
+  background-color: transparent;
+}
+
+.city{
+    display: flex;
+    align-items: center;
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+
+.city svg{
+    margin-left: 1rem;
+}
+
+.date{
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.temp{
+    font-size: 3.5rem;
+    margin-bottom: 0;
+}
+
+.weather{
+    font-size: 2.3rem;
+    margin: 0.5rem 0 0 0;
+}
+
+.min-max{
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0 0;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.active{
+    display: none;
+}
