@@ -100,6 +100,9 @@ const renderWeather = function (data, dataForcast) {
     "Friday",
     "Saturday",
   ];
+  const daysArr = dataForcast.daily;
+  const [day0, day1, day2, day3, day4, day5, day6] = daysArr;
+  console.log(day0);
 
   const markupWeather = `
   <div class="card">
@@ -134,10 +137,6 @@ const renderWeather = function (data, dataForcast) {
     `;
   secCard.innerHTML = "";
   secCard.insertAdjacentHTML("afterbegin", markupWeather);
-
-  const daysArr = dataForcast.daily;
-  const [day0, day1, day2, day3, day4, day5, day6] = daysArr;
-  console.log(day0);
 
   const markupDaily = `
           <div class="daily-forecast">
