@@ -15,7 +15,7 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
-.big-card{
+.big-card {
   display: flex;
   flex-direction: row;
   background-color: #000000;
@@ -26,12 +26,12 @@ body {
   overflow: hidden;
 }
 
-.text-container{
+.text-container {
   width: 55rem;
   text-align: center;
 }
 
-.text h1{
+.text h1 {
   justify-content: center;
   color: white;
 }
@@ -99,7 +99,7 @@ body {
 }
 
 .search-bar:focus {
-    outline: none;
+  outline: none;
 }
 
 .svg-icon {
@@ -121,50 +121,50 @@ body {
   cursor: pointer;
 }
 
-.city{
-    display: flex;
-    align-items: center;
-    font-size: 4rem;
-    margin-top: 0;
-    margin-bottom: 0;
+.city {
+  display: flex;
+  align-items: center;
+  font-size: 4rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.city svg{
-    margin-left: 1rem;
+.city svg {
+  margin-left: 1rem;
 }
 
-.date{
-    font-size: 1.2rem;
-    margin-top: 0;
+.date {
+  font-size: 1.2rem;
+  margin-top: 0;
 }
 
-.temp{
-    font-size: 3.5rem;
-    margin-bottom: 0;
+.temp {
+  font-size: 3.5rem;
+  margin-bottom: 0;
 }
 
-.weather{
-    font-size: 2.3rem;
-    margin: 0.5rem 0 0 0;
+.weather {
+  font-size: 2.3rem;
+  margin: 0.5rem 0 0 0;
 }
 
-.min-max{
-    font-size: 1.2rem;
-    margin: 0.5rem 0 0 0;
+.min-max {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0 0;
 }
 
-.info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
-.active{
-    display: none;
+.active {
+  display: none;
 }
 
-.daily-forecast{
+.daily-forecast {
   color: white;
   display: flex;
   flex-direction: row;
@@ -174,15 +174,15 @@ body {
   border-top: 1px solid;
 }
 
-.daily{
+.daily {
   margin: 1.5rem 3rem;
 }
 
-.daily-day{
+.daily-day {
   color: #326ad1;
 }
 
-.button-daily{
+.button-daily {
   margin: 0 3rem;
   padding: 0.5rem;
   background-color: #b0c4ff;
@@ -191,24 +191,24 @@ body {
   font-size: 1.2rem;
 }
 
-.button-daily:hover{
+.button-daily:hover {
   padding: 0.8rem;
   font-size: 1.5rem;
 }
 
-.daily-container{
+.daily-container {
   color: white;
   text-align: center;
   font-size: 2rem;
 }
 
-.info-msg{
+.info-msg {
   text-align: center;
   padding: 5rem;
   font-size: 2.5rem;
 }
 
-.error-msg{
+.error-msg {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -223,22 +223,38 @@ body {
   /* color: red; */
 }
 
-.svg-icon__error{
+.svg-icon__error {
   width: 2em;
   height: 2em;
   padding-top: 1px;
   fill: red;
 }
 
-.error-info{
+.error-info {
   margin-top: 0.2rem;
 }
 
-/* .model{
+.model {
   background-color: rgb(255, 255, 255);
   width: 50rem;
   height: 35rem;
   position: absolute;
   border: #326ad1 solid;
   border-radius: 1rem;
-} */
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.hidden{
+  display: none;
+}
