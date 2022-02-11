@@ -12,24 +12,26 @@
     <div class="container">
       <div class="big-card">
         <div class="submit-box">
-          <input
-            type="text"
-            class="search-bar"
-            id="search-location"
-            placeholder="Search city"
-            autocomplete="off"
-          />
-          <button class="button" id="search-button">
-            <svg class="svg-icon" viewBox="0 0 20 20">
-              <path
-                fill="none"
-                d="M19.129,18.164l-4.518-4.52c1.152-1.373,1.852-3.143,1.852-5.077c0-4.361-3.535-7.896-7.896-7.896
+          <form action="submit" class="form">
+            <input
+              type="text"
+              class="search-bar"
+              id="search-location"
+              placeholder="Search city"
+              autocomplete="off"
+            />
+            <button class="button" id="search-button">
+              <svg class="svg-icon" viewBox="0 0 20 20">
+                <path
+                  fill="none"
+                  d="M19.129,18.164l-4.518-4.52c1.152-1.373,1.852-3.143,1.852-5.077c0-4.361-3.535-7.896-7.896-7.896
                 c-4.361,0-7.896,3.535-7.896,7.896s3.535,7.896,7.896,7.896c1.934,0,3.705-0.698,5.078-1.853l4.52,4.519
                 c0.266,0.268,0.699,0.268,0.965,0C19.396,18.863,19.396,18.431,19.129,18.164z M8.567,15.028c-3.568,0-6.461-2.893-6.461-6.461
                 s2.893-6.461,6.461-6.461c3.568,0,6.46,2.893,6.46,6.461S12.135,15.028,8.567,15.028z"
-              ></path>
-            </svg>
-          </button>
+                ></path>
+              </svg>
+            </button>
+          </form>
           <div class="section-card">
             <!-- <div class="card">
               <div class="info">
@@ -56,6 +58,13 @@
                 </div>
               </div>
             </div> -->
+            <!-- <div class="error-msg">
+              <svg class="svg-icon__error" viewBox="0 0 20 20">
+                <path d="M18.344,16.174l-7.98-12.856c-0.172-0.288-0.586-0.288-0.758,0L1.627,16.217c0.339-0.543-0.603,0.668,0.384,0.682h15.991C18.893,16.891,18.167,15.961,18.344,16.174 M2.789,16.008l7.196-11.6l7.224,11.6H2.789z M10.455,7.552v3.561c0,0.244-0.199,0.445-0.443,0.445s-0.443-0.201-0.443-0.445V7.552c0-0.245,0.199-0.445,0.443-0.445S10.455,7.307,10.455,7.552M10.012,12.439c-0.733,0-1.33,0.6-1.33,1.336s0.597,1.336,1.33,1.336c0.734,0,1.33-0.6,1.33-1.336S10.746,12.439,10.012,12.439M10.012,14.221c-0.244,0-0.443-0.199-0.443-0.445c0-0.244,0.199-0.445,0.443-0.445s0.443,0.201,0.443,0.445C10.455,14.021,10.256,14.221,10.012,14.221"></path>
+              </svg>
+              <p class="error-info">City not found!</p>
+              <p class="error-info">Check for mistakes in spelling or try to find another city</p>
+            </div> -->
           </div>
         </div>
         <div class="text-container">
@@ -63,7 +72,10 @@
             <h1>Search the weather in your city</h1>
           </div>
           <div class="daily-container">
-            <p>Write the city you want to finde the weather in english!</p>
+            <p class="info-msg">
+              Writte in english the name of the city you want to check the
+              weather!
+            </p>
             <!-- <div class="daily-forecast">
             <p class="daily daily-day">Friday</p>
             <p class="daily daily-weather">Clouds</p>
@@ -116,6 +128,9 @@
           </div>
         </div>
       </div>
+      <!-- <div class="model">
+      
+      </div> -->
     </div>
   </body>
 </html>
