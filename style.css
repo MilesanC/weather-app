@@ -192,7 +192,7 @@ body {
 }
 
 .button-daily:hover {
-  padding: 0.8rem;
+  padding: 0.3rem 1.2rem;
   font-size: 1.5rem;
 }
 
@@ -242,6 +242,11 @@ body {
   border: #326ad1 solid;
   border-radius: 1rem;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  /* justify-content: center; */
 }
 
 .overlay {
@@ -255,6 +260,55 @@ body {
   z-index: 5;
 }
 
-.hidden{
+.hidden {
   display: none;
+}
+
+.close-model {
+  position: absolute;
+  right: 1.2rem;
+  top: 1rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.title h2 {
+  font-size: 2rem;
+  margin: 0.8rem 0;
+}
+
+.model-info {
+  width: 100%;
+  height: 100%;
+  background-color: #82b8f5;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+}
+
+.box-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.model-info-boxes {
+  border-top: #000000 solid;
+  text-align: center;
+}
+
+.model-info-boxes h3 {
+  margin: 0.8rem 0;
+  margin-bottom: 0;
+  font-size: 2rem;
+}
+
+.model-info-boxes p {
+  margin: 1.2rem 0;
+  font-size: 1.5rem;
+}
+
+.title{
+  display: flex;
+  align-items: center;
 }

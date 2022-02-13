@@ -4,8 +4,10 @@ const searchBar = document.querySelector(".search-bar");
 const secCard = document.querySelector(".section-card");
 const city = document.querySelector(".city");
 const daily = document.querySelector(".daily-container");
-const overlayModel = document.querySelector('.overlay');
-const model = document.querySelector('.model');
+const overlayModel = document.querySelector(".overlay");
+const model = document.querySelector(".model");
+const btnCloseModel = document.querySelector(".close-model");
+const modelInfo = document.querySelector(".model-info");
 
 const getWeather = async function (location) {
   try {
@@ -85,6 +87,39 @@ const getIcon = function (weather) {
     <path fill="none" d="M16.888,8.614c0.008-0.117,0.018-0.233,0.018-0.352c0-2.851-2.311-5.161-5.16-5.161c-1.984,0-3.705,1.121-4.568,2.763c-0.32-0.116-0.664-0.182-1.023-0.182c-1.663,0-3.011,1.348-3.011,3.01c0,0.217,0.024,0.427,0.067,0.631c-1.537,0.513-2.647,1.96-2.647,3.67c0,2.138,1.733,3.87,3.871,3.87h10.752c2.374,0,4.301-1.925,4.301-4.301C19.486,10.792,18.416,9.273,16.888,8.614 M15.186,16.003H4.433c-1.66,0-3.01-1.351-3.01-3.01c0-1.298,0.827-2.444,2.06-2.854l0.729-0.243l-0.16-0.751C4.02,8.993,4.003,8.841,4.003,8.692c0-1.186,0.965-2.15,2.151-2.15c0.245,0,0.49,0.045,0.729,0.131l0.705,0.256l0.35-0.664c0.748-1.421,2.207-2.303,3.807-2.303c2.371,0,4.301,1.929,4.301,4.301c0,0.075-0.007,0.148-0.012,0.223l-0.005,0.073L15.99,9.163l0.557,0.241c1.263,0.545,2.079,1.785,2.079,3.159C18.626,14.46,17.082,16.003,15.186,16.003"></path>
   </svg>`;
     return iconSvg;
+  }
+};
+
+const getMoonPhase = function (day) {
+  const moon = day.moon_phase;
+  if (moon === 0 || moon === 1) {
+    const markupMoon = `
+    <svg class="svg-icon" viewBox="0 0 20 20">
+							<path fill="none" d="M9.875,0.625C4.697,0.625,0.5,4.822,0.5,10s4.197,9.375,9.375,9.375S19.25,15.178,19.25,10S15.053,0.625,9.875,0.625"></path>
+						</svg> New moon
+    `;
+    return markupMoon;
+  } else if (moon <= 0.25) {
+    const markupMoon = `
+    <svg class="svg-icon" viewBox="0 0 20 20">
+							<path fill="none" d="M10,0.542c-5.224,0-9.458,4.234-9.458,9.458c0,5.223,4.235,9.459,9.458,9.459c5.224,0,9.458-4.236,9.458-9.459C19.459,4.776,15.225,0.542,10,0.542 M8.923,18.523C4.685,17.992,1.402,14.383,1.402,10c0-4.383,3.283-7.993,7.521-8.524C6.919,3.749,5.701,6.731,5.701,10C5.701,13.27,6.919,16.25,8.923,18.523"></path>
+						</svg> Quarter moon
+    `;
+    return markupMoon;
+  } else if (moon <= 0.5) {
+    const markupMoon = `
+    <svg class="svg-icon" viewBox="0 0 20 20">
+							<path fill="none" d="M10,0.562c-5.195,0-9.406,4.211-9.406,9.406c0,5.195,4.211,9.406,9.406,9.406c5.195,0,9.406-4.211,9.406-9.406C19.406,4.774,15.195,0.562,10,0.562 M10,18.521c-4.723,0-8.551-3.829-8.551-8.552S5.277,1.418,10,1.418s8.552,3.828,8.552,8.551S14.723,18.521,10,18.521"></path>
+						</svg> Full moon
+            `;
+    return markupMoon;
+  } else if (moon <= 0.75) {
+    const markupMoon = `
+    <svg class="svg-icon" viewBox="0 0 20 20">
+							<path fill="none" d="M10,0.375c-5.229,0-9.469,4.239-9.469,9.469S4.771,19.312,10,19.312s9.469-4.239,9.469-9.469S15.229,0.375,10,0.375 M11.079,18.377c2.005-2.275,3.225-5.262,3.225-8.533c0-3.272-1.22-6.258-3.225-8.533c4.243,0.531,7.529,4.145,7.529,8.533C18.608,14.232,15.322,17.846,11.079,18.377"></path>
+						</svg> Quarter moon
+    `;
+    return markupMoon;
   }
 };
 
@@ -222,15 +257,95 @@ const renderWeather = function (data, dataForcast) {
   daily.innerHTML = "";
   daily.insertAdjacentHTML("beforeend", markupDaily);
 
+  const renderWeatherModel = function (day) {
+    const icon = getIcon(day);
+    const moonPhase = getMoonPhase(day)
+    const markupModel = `
+    <div class="model-info-boxes">
+            <h3>Temperature</h3>
+            <div class="box-info">
+              <p>Morning: ${Math.round(day.temp.morn)}°C</p>
+              <p>Day: ${Math.round(day.temp.day)}°C</p>
+              <p>Evening: ${Math.round(day.temp.eve)}°C</p>
+              <p>Night: ${Math.round(day.temp.night)}°C</p>
+            </div>
+          </div>
+          <div class="model-info-boxes">
+            <h3>Feels like</h3>
+            <div class="box-info">
+              <p>Morning: ${Math.round(day.feels_like.morn)}°C</p>
+              <p>Day: ${Math.round(day.feels_like.day)}°C</p>
+              <p>Evening: ${Math.round(day.feels_like.eve)}°C</p>
+              <p>Night: ${Math.round(day.feels_like.night)}°C</p>
+            </div>
+            <div class="model-info-boxes">
+              <div class="box-info">
+                <span
+                  ><h3>Max. temp.</h3>
+                  <p>${Math.round(day.temp.max)}°C</p></span
+                >
+                <span
+                  ><h3>Min. temp.</h3>
+                  <p>${Math.round(day.temp.min)}°C</p></span
+                >
+                <span
+                  ><h3>Weather</h3>
+                  <p>${icon} ${day.weather[0].main}</p></span
+                >
+                <span
+                  ><h3>Moon phase</h3>
+                  <p>${moonPhase}</p></span
+                >
+              </div>
+            </div>
+            <div class="model-info-boxes">
+              <div class="box-info">
+                <span
+                  ><h3>Humidity</h3>
+                  <p>${day.humidity}%</p></span
+                >
+                <span
+                  ><h3>Wind speed</h3>
+                  <p>${day.wind_speed} m/s</p></span
+                >
+                <span
+                  ><h3>Cloudiness</h3>
+                  <p>${day.clouds}%</p></span
+                >
+                <span
+                  ><h3>Pressure</h3>
+                  <p>${day.pressure} hPa</p></span
+                >
+              </div>
+            </div>
+          </div>
+    `;
+    modelInfo.innerHTML = "";
+    modelInfo.insertAdjacentHTML("beforeend", markupModel);
+  };
   const btnsModel = document.querySelectorAll(".button-daily");
-  console.log(btnsModel)
 
   for (let i = 0; i < btnsModel.length; i++) {
     btnsModel[i].addEventListener("click", function () {
-      model.classList.remove('hidden');
-      overlayModel.classList.remove('hidden');
+      renderWeatherModel(daysArr[i]);
+      model.classList.remove("hidden");
+      overlayModel.classList.remove("hidden");
     });
   }
+
+  const closeModel = function () {
+    model.classList.add("hidden");
+    overlayModel.classList.add("hidden");
+  };
+
+  btnCloseModel.addEventListener("click", closeModel);
+  overlayModel.addEventListener("click", closeModel);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !model.classList.contains("hidden")) {
+      closeModel();
+    }
+  });
 };
 
 searchForm.addEventListener("submit", function (e) {
