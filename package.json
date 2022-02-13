@@ -1,0 +1,22 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MilesanC/weather-app.git"
+  },
+  "author": "Calin Milesan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MilesanC/weather-app/issues"
+  },
+  "homepage": "https://github.com/MilesanC/weather-app#readme",
+  "dependencies": {
+    "parcel": "^2.3.1"
+  }
+}
