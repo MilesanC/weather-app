@@ -139,7 +139,6 @@ const renderWeather = function (data, dataForcast) {
   ];
   const daysArr = dataForcast.daily;
   const [day0, day1, day2, day3, day4, day5, day6] = daysArr;
-  console.log(day0);
 
   const markupWeather = `
   <div class="card">
@@ -259,7 +258,7 @@ const renderWeather = function (data, dataForcast) {
 
   const renderWeatherModel = function (day) {
     const icon = getIcon(day);
-    const moonPhase = getMoonPhase(day)
+    const moonPhase = getMoonPhase(day);
     const markupModel = `
     <div class="model-info-boxes">
             <h3>Temperature</h3>
@@ -350,6 +349,12 @@ const renderWeather = function (data, dataForcast) {
 
 searchForm.addEventListener("submit", function (e) {
   e.preventDefault();
+  secCard.innerHTML = "";
+  daily.innerHTML = "";
+  secCard.insertAdjacentHTML(
+    "afterbegin",
+    "<div class='spinner'><h1>Loading...</h1><div>"
+  );
   getWeather(searchBar.value);
   searchBar.value = "";
 });

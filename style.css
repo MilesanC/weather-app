@@ -48,6 +48,13 @@ body {
   display: flex;
 }
 
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
 .small-info {
   margin: 1rem;
   backdrop-filter: blur(10px);
@@ -169,7 +176,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 1.4rem;
   border-top: 1px solid;
 }
@@ -192,8 +199,8 @@ body {
 }
 
 .button-daily:hover {
-  padding: 0.3rem 1.2rem;
-  font-size: 1.5rem;
+  background-color: rgb(43, 43, 159);
+  cursor: pointer;
 }
 
 .daily-container {
@@ -220,7 +227,6 @@ body {
   padding-top: 1rem;
   border: red solid;
   border-radius: 1rem;
-  /* color: red; */
 }
 
 .svg-icon__error {
@@ -246,7 +252,6 @@ body {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  /* justify-content: center; */
 }
 
 .overlay {
@@ -271,6 +276,8 @@ body {
   background-color: transparent;
   border: none;
   font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
 }
 
 .title h2 {
@@ -308,7 +315,7 @@ body {
   font-size: 1.5rem;
 }
 
-.title{
+.title {
   display: flex;
   align-items: center;
 }
