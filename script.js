@@ -344,7 +344,7 @@ const renderWeather = function (data, dataForcast) {
     if (e.key === "Escape" && !model.classList.contains("hidden")) {
       closeModel();
     }
-  });
+  }); 
 };
 
 searchForm.addEventListener("submit", function (e) {
